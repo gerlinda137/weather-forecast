@@ -1,5 +1,7 @@
+*,
+*::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body {
@@ -7,9 +9,10 @@ body {
   color: #000000;
   font-size: 20px;
   line-height: 23px;
-  min-width: 320px;
-  max-width: 501px;
   margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
 }
 
 a {
@@ -36,11 +39,15 @@ ul {
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  min-width: 320px;
+  max-width: 501px;
   margin: 0 auto;
+  margin-top: 20px;
   border-radius: 27px;
   background-image: url('img/cloudy-bg.png');
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 .main-header {
@@ -80,12 +87,14 @@ ul {
   padding-right: 48px;
   padding-top: 31px;
   margin-bottom: 18px;
+  flex-wrap: wrap;
 }
 
 .top-section__weather-container {
   display: flex;
   flex-direction: column;
   margin-top: -8px;
+  white-space: nowrap;
 }
 
 .top-section__temperature-current {
@@ -125,11 +134,16 @@ ul {
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .properties__item {
   display: flex;
   align-items: center;
+}
+
+.properties__item:not(:last-child) {
+  margin-right: 32px;
 }
 
 .properties__item svg {
@@ -143,4 +157,29 @@ ul {
   border-radius: 0px 0px 27px 27px;
   padding: 29px 51px 26px 53px;
   color: #ffffff;
+}
+
+@media (max-width: 500px) {
+  .main-header__location::before {
+    top: 0;
+  }
+
+  .properties {
+    justify-content: center;
+  }
+
+  .properties__item:last-child {
+    margin-top: 5px;
+  }
+}
+
+
+@media (max-width: 380px) {
+  .top-section {
+    justify-content: center;
+  }
+
+  .properties__item:not(:last-child) {
+    margin-right: 10px;
+  }
 }
