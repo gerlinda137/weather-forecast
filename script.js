@@ -3,7 +3,7 @@ let currentDate = new Date();
 let dateOptions = { month: 'long', day: 'numeric' };
 
 function getWeekday(date) {
-  let weekdays = [
+  const weekdays = [
     'Sunday',
     'Monday',
     'Tuesday',
@@ -14,6 +14,13 @@ function getWeekday(date) {
   ];
   return weekdays[date.getDay()];
 }
+
+const weatherBackgrounds = {
+  Rain: 'img/rain-bg.jpg',
+  Snow: 'img/snowy-bg.png',
+  Clear: 'img/clear-bg.png',
+  Clouds: 'img/cloudy-bg.png',
+};
 
 document.querySelector('.main-footer__weekday').textContent = getWeekday(
   currentDate
@@ -50,6 +57,10 @@ fetch(
     document.querySelector('.humidity').textContent =
       data.main['humidity'] + '%';
     document.querySelector('.wind').textContent = data.wind['speed'] + ' m/s';
+    if (data.weather[0].main in weatherBackgrounds) {
+      document.querySelector('.inner-container').style.backgroundImage =
+        "url('" + weatherBackgrounds[data.weather[0].main] + "')";
+    }
   })
   .catch(function () {
     // catch any errors

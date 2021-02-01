@@ -44,7 +44,6 @@ ul {
   margin: 0 auto;
   margin-top: 20px;
   border-radius: 27px;
-  background-image: url('img/cloudy-bg.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -164,6 +163,7 @@ ul {
   padding: 29px 51px 26px 53px;
   color: #ffffff;
 }
+
 
 @media (max-width: 500px) {
   .main-header__location::before {
