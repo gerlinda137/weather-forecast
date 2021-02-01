@@ -1,3 +1,28 @@
+let currentDate = new Date();
+
+let dateOptions = { month: 'long', day: 'numeric' };
+
+function getWeekday(date) {
+  let weekdays = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+  return weekdays[date.getDay()];
+}
+
+document.querySelector('.main-footer__weekday').textContent = getWeekday(
+  currentDate
+);
+
+document.querySelector(
+  '.main-footer__date'
+).textContent = currentDate.toLocaleDateString('en-US', dateOptions);
+
 fetch(
   'http://api.openweathermap.org/data/2.5/weather?id=498817&appid=3e352cf401fb565c887aab84536ac798'
 )
