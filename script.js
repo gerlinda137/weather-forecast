@@ -38,7 +38,7 @@ document.querySelector(
 ).textContent = currentDate.toLocaleDateString('en-US', dateOptions);
 
 fetch(
-  'http://api.openweathermap.org/data/2.5/weather?id=498817&appid=3e352cf401fb565c887aab84536ac798'
+  'https://api.openweathermap.org/data/2.5/weather?id=498817&appid=3e352cf401fb565c887aab84536ac798'
 )
   .then(function (resp) {
     return resp.json();
