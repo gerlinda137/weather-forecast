@@ -5,10 +5,10 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif, Arial;
+  font-family: 'Montserrat', sans-serif;
   color: #000000;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 14px;
+  line-height: 17px;
   margin: 0 auto;
   padding-right: 15px;
   padding-left: 15px;
@@ -41,48 +41,85 @@ ul {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
-  min-width: 320px;
-  max-width: 501px;
+  width: 320px;
   margin: 0 auto;
-  margin-top: 20px;
-  border-radius: 27px;
+  border-radius: 12px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
-
-.main-header {
-  display: flex;
-  background-color: rgba(81, 87, 101, 0.8);
-  border-radius: 27px 27px 0px 0px;
-  padding: 27px 51px 21px 53px;
-
-}
-
-.main-header__location {
-  color: #ffffff;
-  margin: 0;
-  padding-left: 29px;
-  position: relative;
-}
-
-.main-header__location::before {
-  content: '';
-  width: 18.57px;
-  height: 27px;
-  position: absolute;
-  left: 0;
-  top: -50%;
-  background-image: url('img/location.svg');
+  background-image: url('img/default-bg.jpg');
+  padding: 0 11px;
 }
 
 .page-main {
   display: flex;
   flex-direction: column;
+  padding-top: 45px;
 }
 
-.top-section {
+.current {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(141.31deg, rgba(255, 255, 255, 0.6) 15.72%, rgba(255, 255, 255, 0.258) 100.39%);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding-top: 18px;
+}
+
+.local-data {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+
+.local-data__date {
+  font-size: 16px;
+  line-height: 14px;
+}
+
+.current__temperature-range {
+  align-self: flex-end;
+  line-height: 17px;
+  margin-bottom: 10px;
+}
+
+.current__inner-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 23px;
+  row-gap: 5px;
+  justify-content: start;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+
+.current__temperature {
+  font-weight: 500;
+  font-size: 41px;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.current__img-container {
+  padding-top: 9px;
+}
+
+.current__bottom {
+  display: flex;
+  width: 100%;
+  background: linear-gradient(141.31deg, rgba(255, 255, 255, 0.6) 15.72%, rgba(255, 255, 255, 0.258) 100.39%);
+  backdrop-filter: blur(8px);
+
+  border-radius: 0px 0px 10px 10px;
+}
+
+.properties {
+  display: flex;
+}
+
+/* .top-section {
   display: flex;
   justify-content: space-between;
   padding-left: 51px;
@@ -191,7 +228,7 @@ ul {
   .properties__item:not(:last-child) {
     margin-right: 10px;
   }
-}
+} */
 
 /*preloader*/
 

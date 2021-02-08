@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather forecast</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,14 +16,36 @@
   </div>
 
   <div class="inner-container">
-    <header class="main-header">
-      <p class="main-header__location">
-        <span class="main-header__city">Saint Petersburg</span>,
-        <span class="main-header__country">Russia</span>
-      </p>
-    </header>
     <main class="page-main">
-      <section class="top-section">
+      <section class="current">
+        <div class="local-data">
+          <span class="local-data__city">Saint Petersburg</span>
+          <span class="local-data__date">Mon, 9</span>
+        </div>
+        <span class="current__temperature-range">18° C / 21° C</span>
+        <div class="current__inner-container">
+          <span class="current__temperature">+21° C</span>
+          <div class="current__img-container">
+            <img class="current__img" alt="Weather image" height="29" src="img/rainy-icon.png">
+          </div>
+          <span class="current__feeling">Feels like: 18° C</span>
+          <span class="current__weather">light rain</span>
+        </div>
+        <div class="current__bottom">
+          <ul class="properties">
+            <li class="properties__item">
+              <span class="properties__item-content humidity">60%</span>
+            </li>
+            <li class="properties__item">
+              <span class="properties__item-content wind">3 km/h</span>
+            </li>
+            <li class="properties__item">
+              <span class="properties__item-content pressure">749 pmh</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- <section class="top-section">
         <span class="top-section__temperature-range">15° C / 18° C</span>
         <div class="top-section__weather-container">
           <span class="top-section__temperature-current">21° C</span>
@@ -90,12 +112,12 @@
             <span class="properties__item-content rainfall"> &#60;0,1 mm </span>
           </li>
         </ul>
-      </section>
+      </section> -->
     </main>
-    <footer class="main-footer">
+    <!-- <footer class="main-footer">
       <span class="main-footer__weekday">Tuesday</span>
       <span class="main-footer__date">June 23</span>
-    </footer>
+    </footer> -->
   </div>
   <script src="script.js"></script>
 </body>
