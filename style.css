@@ -83,6 +83,7 @@ ul {
   align-self: flex-end;
   line-height: 17px;
   margin-bottom: 10px;
+  padding-right: 20px;
 }
 
 .current__inner-container {
@@ -93,6 +94,7 @@ ul {
   justify-content: start;
   padding-left: 19px;
   padding-right: 19px;
+  margin-bottom: 25px;
 }
 
 .current__temperature {
@@ -111,12 +113,51 @@ ul {
   width: 100%;
   background: linear-gradient(141.31deg, rgba(255, 255, 255, 0.6) 15.72%, rgba(255, 255, 255, 0.258) 100.39%);
   backdrop-filter: blur(8px);
-
+  -webkit-backdrop-filter: blur(8px);
+  padding: 28px 20px 15px 20px;
   border-radius: 0px 0px 10px 10px;
 }
 
 .properties {
   display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.properties__item {
+  padding-top: 25px;
+  position: relative;
+}
+
+.properties__item::before {
+  content: '';
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 0;
+  left: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.properties__item:first-child::before {
+  background-image: url('img/humidity-icon.png');
+}
+
+.properties__item:nth-child(2)::before {
+  background-image: url('img/wind-icon.png');
+}
+
+.properties__item:last-child::before {
+  background-image: url('img/pressure-icon.png');
+}
+
+
+.properties__item-content {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 /* .top-section {
