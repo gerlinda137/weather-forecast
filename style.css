@@ -54,7 +54,7 @@ ul {
 .page-main {
   display: flex;
   flex-direction: column;
-  padding-top: 45px;
+  padding-top: 30px;
 }
 
 .current {
