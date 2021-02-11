@@ -54,11 +54,19 @@ fetch(
       Math.round(data.main.temp - 273) + '&deg;' + ' C';
     document.querySelector('.current__weather').textContent =
       data.weather[0]['description'];
+    document.querySelector('.current__feeling').innerHTML =
+      'Feels like: ' +
+      ' ' +
+      Math.round(data.main['feels_like'] - 273) +
+      '&deg;' +
+      ' C';
     document.querySelector(
       '.current__img'
     ).src = `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`;
     document.querySelector('.humidity').textContent =
       data.main['humidity'] + '%';
+    document.querySelector('.pressure').textContent =
+      data.main['pressure'] + ' pmh';
     document.querySelector('.wind').textContent = data.wind['speed'] + ' m/s';
     if (data.weather[0].main in weatherBackgrounds) {
       document.querySelector('.inner-container').style.backgroundImage =
