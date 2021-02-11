@@ -105,9 +105,32 @@ ul {
   white-space: nowrap;
 }
 
-.current__img-container {
+/* .current__img-container {
   padding-top: 9px;
+  height: 29px;
+  width: 32px;
+} */
+
+.current__img-container {
+  /* padding-top: 9px; */
+  position: relative;
 }
+
+.current__img {
+  position: absolute;
+  top: -12px;
+  left: -10px;
+  width: 75px;
+  height: 75px;
+}
+
+/* .current__img {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 131%; */
 
 .current__bottom {
   display: flex;
