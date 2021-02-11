@@ -221,6 +221,17 @@ ul {
 
 .day__img-container {
   margin-bottom: 18px;
+  position: relative;
+  height: 27px;
+  width: 30px;
+}
+
+.day__img {
+  position: absolute;
+  left: -10px;
+  width: 48px;
+  height: auto;
+  top: -13px;
 }
 
 .day__temp-range {
