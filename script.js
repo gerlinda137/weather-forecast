@@ -30,6 +30,16 @@ const forecastDates = document.querySelectorAll('.day__date');
 const forecastDays = document.querySelectorAll('.day');
 
 function applyDataToLi(li, liData) {
+  li.querySelector('.day__weekday').textContent = getWeekdayName(
+    new Date(liData.dt * 1000)
+  );
+
+  li.querySelector('.day__date').textContent = new Date(
+    liData.dt * 1000
+  ).toLocaleDateString('en-US', {
+    day: 'numeric',
+  });
+
   li.querySelector(
     '.day__img'
   ).src = `https://openweathermap.org/img/wn/${liData.weather[0].icon}@2x.png`;
@@ -62,9 +72,9 @@ fetch(
     document.querySelector('.local-data__date').textContent =
       getWeekdayName(date) + ', ' + currentDateNum;
 
-    for (let i = 0; i < forecastDates.length; i++) {
-      forecastDates[i].textContent = +currentDateNum + i + 1;
-    }
+    // for (let i = 0; i < forecastDates.length; i++) {
+    //   forecastDates[i].textContent = +currentDateNum + i + 1;
+    // }
 
     document.querySelector('.current__temperature-range').innerHTML =
       Math.round(data.daily[0].temp.min - 273) +
