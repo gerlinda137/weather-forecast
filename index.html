@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather forecast</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,14 +18,106 @@
   </div>
 
   <div class="inner-container">
-    <header class="main-header">
-      <p class="main-header__location">
-        <span class="main-header__city">Saint Petersburg</span>,
-        <span class="main-header__country">Russia</span>
-      </p>
-    </header>
     <main class="page-main">
-      <section class="top-section">
+      <section class="current">
+        <div class="local-data">
+          <span class="local-data__city">Saint Petersburg</span>
+          <span class="local-data__date">Mon, 9</span>
+        </div>
+        <span class="current__temperature-range">18° C / 21° C</span>
+        <div class="current__inner-container">
+          <span class="current__temperature">+21° C</span>
+          <div class="current__img-container">
+            <img class="current__img" alt="Weather image" src="img/rainy-icon.png">
+          </div>
+          <span class="current__feeling">Feels like: 18° C</span>
+          <span class="current__weather">light rain</span>
+        </div>
+        <div class="current__bottom">
+          <ul class="properties">
+            <li class="properties__item">
+              <span class="properties__item-content humidity">60%</span>
+            </li>
+            <li class="properties__item">
+              <span class="properties__item-content wind">3 km/h</span>
+            </li>
+            <li class="properties__item">
+              <span class="properties__item-content pressure">749 pmh</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="forecast">
+        <ul class="forecast-list">
+          <li class="forecast-list__item day">
+            <span class="day__weekday day__weekday--1">Tue</span>
+            <span class="day__date day__date--1">10</span>
+            <div class="day__img-container">
+              <img class="day__img" src="img/rainy-icon.png" alt="Weather icon">
+            </div>
+            <div class="day__temp-range">
+              <span class="day__highest-temp">+23</span>
+              <span class="day__lowest-temp">16</span>
+            </div>
+          </li>
+          <li class="forecast-list__item day">
+            <span class="day__weekday day__weekday--2">Wed</span>
+            <span class="day__date day__date--2">11</span>
+            <div class="day__img-container">
+              <img class="day__img" src="img/rainy-icon.png" alt="Weather icon">
+            </div>
+            <div class="day__temp-range">
+              <span class="day__highest-temp">+23</span>
+              <span class="day__lowest-temp">16</span>
+            </div>
+          </li>
+          <li class="forecast-list__item day">
+            <span class="day__weekday day__weekday--3">Thu</span>
+            <span class="day__date day__date--3">12</span>
+            <div class="day__img-container">
+              <img class="day__img" src="img/rainy-icon.png" alt="Weather icon">
+            </div>
+            <div class="day__temp-range">
+              <span class="day__highest-temp">+23</span>
+              <span class="day__lowest-temp">16</span>
+            </div>
+          </li>
+          <li class="forecast-list__item day">
+            <span class="day__weekday day__weekday--4">Fri</span>
+            <span class="day__date day__date--4">13</span>
+            <div class="day__img-container">
+              <img class="day__img" src="img/rainy-icon.png" alt="Weather icon">
+            </div>
+            <div class="day__temp-range">
+              <span class="day__highest-temp">+23</span>
+              <span class="day__lowest-temp">16</span>
+            </div>
+          </li>
+          <li class="forecast-list__item day">
+            <span class="day__weekday day__weekday--5">Sat</span>
+            <span class="day__date day__date--5">14</span>
+            <div class="day__img-container">
+              <img class="day__img" src="img/rainy-icon.png" alt="Weather icon">
+            </div>
+            <div class="day__temp-range">
+              <span class="day__highest-temp">+23</span>
+              <span class="day__lowest-temp">16</span>
+            </div>
+          </li>
+          <li class="forecast-list__item day">
+            <span class="day__weekday day__weekday--6">Sun</span>
+            <span class="day__date day__date--6">15</span>
+            <div class="day__img-container">
+              <img class="day__img" src="img/cloudy.png" alt="Weather icon">
+            </div>
+            <div class="day__temp-range">
+              <span class="day__highest-temp">+23</span>
+              <span class="day__lowest-temp">16</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- <section class="top-section">
         <span class="top-section__temperature-range">15° C / 18° C</span>
         <div class="top-section__weather-container">
           <span class="top-section__temperature-current">21° C</span>
@@ -90,12 +184,12 @@
             <span class="properties__item-content rainfall"> &#60;0,1 mm </span>
           </li>
         </ul>
-      </section>
+      </section> -->
     </main>
-    <footer class="main-footer">
+    <!-- <footer class="main-footer">
       <span class="main-footer__weekday">Tuesday</span>
       <span class="main-footer__date">June 23</span>
-    </footer>
+    </footer> -->
   </div>
   <script src="script.js"></script>
 </body>
