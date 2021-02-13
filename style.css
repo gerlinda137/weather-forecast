@@ -31,6 +31,14 @@ ul {
   padding: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
 .preloader {
   display: flex;
   position: fixed;
@@ -191,6 +199,10 @@ ul {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.forecast__title {
+  display: none;
+}
+
 .forecast-list {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -229,6 +241,72 @@ ul {
 
 .day__lowest-temp {
   font-weight: 300;
+}
+
+/*desktop*/
+
+@media (min-width: 720px) {
+  body {
+    padding: 0;
+    font-size: 18px;
+  }
+
+  .inner-container {
+    max-width: 1272px;
+    width: 100%;
+    padding: 0;
+    /* margin-top: 30vh; */
+  }
+
+  .page-main {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .current {
+    margin-right: 26px;
+    width: 100%;
+    max-width: 600px;
+    padding-top: 40px;
+    border-radius: 20px;
+  }
+
+  .current__inner-container {
+    padding-left: 36px;
+  }
+
+  .local-data {
+    padding-left: 39px;
+    padding-right: 41px;
+    margin-bottom: 20px;
+  }
+
+  .local-data__city {
+    font-size: 17px;
+  }
+
+  .local-data__date {
+    font-size: 18px;
+  }
+
+  .current__temperature-range {
+    padding-right: 40px;
+  }
+
+  .forecast {
+    padding-top: 37px;
+    width: 100%;
+  }
+
+  .forecast__title {
+    margin: 0;
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    margin-left: 30px;
+    margin-bottom: 52px;
+  }
 }
 
 
