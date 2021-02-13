@@ -269,6 +269,7 @@ ul {
     max-width: 600px;
     padding-top: 40px;
     border-radius: 20px;
+    margin-bottom: 57px;
   }
 
   .current__inner-container {
@@ -317,6 +318,7 @@ ul {
 
   .current__bottom {
     padding: 37px 35px 51px 45px;
+    border-radius: 0px 0px 20px 20px;
   }
 
   .properties__item {
@@ -359,8 +361,18 @@ ul {
   }
 
   .forecast {
-    padding-top: 37px;
+    padding: 37px 35px 14px 15px;
     width: 100%;
+    border-radius: 20px;
+  }
+
+  .forecast::after {
+    top: 257px;
+    height: 2px;
+  }
+
+  .forecast-list {
+    margin-bottom: 51px;
   }
 
   .forecast__title {
@@ -371,6 +383,29 @@ ul {
     line-height: 22px;
     margin-left: 30px;
     margin-bottom: 52px;
+  }
+
+  .day__weekday {
+    margin-bottom: 13px;
+  }
+
+  .day__date {
+    margin-bottom: 35px;
+  }
+
+  .day__img-container {
+    margin-bottom: 63px;
+  }
+
+  .day__img {
+    width: 80px;
+    height: auto;
+    top: -35px;
+    left: -20px;
+  }
+
+  .day__highest-temp {
+    margin-bottom: 6px;
   }
 }
 
