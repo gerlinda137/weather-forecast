@@ -273,6 +273,27 @@ ul {
 
   .current__inner-container {
     padding-left: 36px;
+    grid-template-columns: 240px 1fr;
+    row-gap: 24px;
+    column-gap: 35px;
+  }
+
+  .current__temperature {
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 88px;
+  }
+
+  .current__weather {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .current__img {
+    top: -13px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
   }
 
   .local-data {
