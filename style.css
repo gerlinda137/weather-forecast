@@ -252,9 +252,9 @@ ul {
   }
 
   .inner-container {
-    max-width: 1272px;
+    max-width: 1312px;
     width: 100%;
-    padding: 0;
+    padding: 0 20px;
     /* margin-top: 30vh; */
   }
 
@@ -276,6 +276,7 @@ ul {
     grid-template-columns: 240px 1fr;
     row-gap: 24px;
     column-gap: 35px;
+    margin-bottom: 46px;
   }
 
   .current__temperature {
@@ -312,6 +313,49 @@ ul {
 
   .current__temperature-range {
     padding-right: 40px;
+  }
+
+  .current__bottom {
+    padding: 37px 35px 51px 45px;
+  }
+
+  .properties__item {
+    padding-top: 0;
+    padding-left: 45px;
+  }
+
+  .properties__item:first-child {
+    padding-left: 30px;
+  }
+
+
+  .properties__item::before {
+    left: -5px;
+  }
+
+  .properties__item:first-child::before {
+    background-image: url('img/humidity-icon@2x.png');
+    width: 20px;
+    height: 21px;
+  }
+
+  .properties__item:nth-child(2)::before {
+    background-image: url('img/wind-icon@x2.png');
+    width: 35px;
+    height: 35px;
+  }
+
+  .properties__item:last-child::before {
+    background-image: url('img/pressure-icon@x2.png');
+    width: 29px;
+    height: 35px;
+    top: -5px;
+    left: 5px;
+  }
+
+  .properties__item-content {
+    font-size: 18px;
+    line-height: 21px;
   }
 
   .forecast {
