@@ -1,9 +1,23 @@
 /*Получение геолокации юзера */
 
-navigator.geolocation.getCurrentPosition(function (position) {
+navigator.geolocation.getCurrentPosition(onLocationSucceed, onLocationFailed);
+
+function onLocationSucceed(position) {
   fetchWeather(position.coords.latitude, position.coords.longitude);
   fetchLocation(position.coords.latitude, position.coords.longitude);
-});
+}
+
+function onLocationFailed() {
+  alert(
+    'Please make sure that you allowed geolocation info for this app and enabled geolocation on your device. For now, check the weather in Saint-Petersburg, Russia'
+  );
+  fetchWeather(59.9342802, 30.3350986);
+}
+
+// navigator.geolocation.getCurrentPosition(function (position) {
+//   fetchWeather(position.coords.latitude, position.coords.longitude);
+//   fetchLocation(position.coords.latitude, position.coords.longitude);
+// });
 
 /////////////////////////////////////////
 
@@ -22,10 +36,6 @@ const weatherBackgrounds = {
 let forecastIcons = document.querySelectorAll('.day__img');
 let forecastHighestTemp = document.querySelectorAll('.day__highest-temp');
 let forecastLowestTemp = document.querySelectorAll('.day__lowest-temp');
-
-// document.querySelector(
-//   '.local-data__date'
-// ).textContent = currentDate.toLocaleDateString('en-US', dateOptions);
 
 const forecastDates = document.querySelectorAll('.day__date');
 
@@ -74,10 +84,6 @@ function fetchWeather(lat, lon) {
       document.querySelector('.local-data__date').textContent =
         getWeekdayName(date) + ', ' + currentDateNum;
 
-      // for (let i = 0; i < forecastDates.length; i++) {
-      //   forecastDates[i].textContent = +currentDateNum + i + 1;
-      // }
-
       document.querySelector('.current__temperature-range').innerHTML =
         Math.round(data.daily[0].temp.min - 273) +
         '&deg;' +
@@ -114,7 +120,7 @@ function fetchWeather(lat, lon) {
         applyDataToLi(forecastDays[j], data.daily[j + 1]);
       }
 
-      imagesLoaded(document.body, function (instance) {
+      imagesLoaded(document.body, { background: true }, function (instance) {
         console.log('all images are loaded');
         let preloader = document.querySelector('.preloader');
         preloader.style.display = 'none';
