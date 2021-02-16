@@ -134,8 +134,13 @@ function fetchLocation(lat, lon) {
     })
     .then(function (data) {
       console.log(data);
-      document.querySelector('.local-data__city').textContent =
-        data.city + ', ' + data.locality;
+
+      if (data.city == '') {
+        document.querySelector('.local-data__city').textContent = data.locality;
+      } else {
+        document.querySelector('.local-data__city').textContent =
+          data.city + ', ' + data.locality;
+      }
     })
     .catch(function () {
       // catch any errors
