@@ -1,9 +1,23 @@
 /*Получение геолокации юзера */
 
-navigator.geolocation.getCurrentPosition(function (position) {
+navigator.geolocation.getCurrentPosition(onLocationSucceed, onLocationFailed);
+
+function onLocationSucceed(position) {
   fetchWeather(position.coords.latitude, position.coords.longitude);
   fetchLocation(position.coords.latitude, position.coords.longitude);
-});
+}
+
+function onLocationFailed() {
+  alert(
+    'Please make sure that you allowed geolocation info for this app and enabled geolocation on your device. For now, check the weather in Saint-Petersburg, Russia'
+  );
+  fetchWeather(59.9342802, 30.3350986);
+}
+
+// navigator.geolocation.getCurrentPosition(function (position) {
+//   fetchWeather(position.coords.latitude, position.coords.longitude);
+//   fetchLocation(position.coords.latitude, position.coords.longitude);
+// });
 
 /////////////////////////////////////////
 
