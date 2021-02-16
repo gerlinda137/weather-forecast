@@ -9,6 +9,7 @@ window.onload = () => {
 
 navigator.geolocation.getCurrentPosition(function (position) {
   fetchWeather(position.coords.latitude, position.coords.longitude);
+  fetchLocation(position.coords.latitude, position.coords.longitude);
 });
 
 /////////////////////////////////////////
@@ -68,7 +69,6 @@ function fetchWeather(lat, lon) {
     .then(function (resp) {
       return resp.json();
     })
-    // 498817
     .then(function (data) {
       console.log(data);
 
@@ -120,19 +120,23 @@ function fetchWeather(lat, lon) {
       for (let j = 0; j < forecastDays.length; j++) {
         applyDataToLi(forecastDays[j], data.daily[j + 1]);
       }
-      // applyDataToLi(document.querySelector('.day'), data.daily[1]);
+    })
+    .catch(function () {
+      // catch any errors
+    });
+}
 
-      // for (let j = 0; j < forecastIcons.length; j++) {
-      //   forecastIcons[j].src = `https://openweathermap.org/img/wn/${
-      //     data.daily[j + 1].weather[0].icon
-      //   }@2x.png`;
-      // }
-
-      // for (let k = 0; k < forecastHighestTemp.length; k++) {
-      //   let tempMax = data.daily[k + 1].temp.max - 273;
-      //   tempMax = Math.round(tempMax);
-      //   forecastHighestTemp[k].innerHTML = tempMax;
-      // }
+function fetchLocation(lat, lon) {
+  fetch(
+    `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=eng`
+  )
+    .then(function (resp) {
+      return resp.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      document.querySelector('.local-data__city').textContent =
+        data.city + ', ' + data.locality;
     })
     .catch(function () {
       // catch any errors
