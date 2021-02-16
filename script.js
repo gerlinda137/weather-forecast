@@ -23,10 +23,6 @@ let forecastIcons = document.querySelectorAll('.day__img');
 let forecastHighestTemp = document.querySelectorAll('.day__highest-temp');
 let forecastLowestTemp = document.querySelectorAll('.day__lowest-temp');
 
-// document.querySelector(
-//   '.local-data__date'
-// ).textContent = currentDate.toLocaleDateString('en-US', dateOptions);
-
 const forecastDates = document.querySelectorAll('.day__date');
 
 const forecastDays = document.querySelectorAll('.day');
@@ -74,10 +70,6 @@ function fetchWeather(lat, lon) {
       document.querySelector('.local-data__date').textContent =
         getWeekdayName(date) + ', ' + currentDateNum;
 
-      // for (let i = 0; i < forecastDates.length; i++) {
-      //   forecastDates[i].textContent = +currentDateNum + i + 1;
-      // }
-
       document.querySelector('.current__temperature-range').innerHTML =
         Math.round(data.daily[0].temp.min - 273) +
         '&deg;' +
@@ -114,7 +106,7 @@ function fetchWeather(lat, lon) {
         applyDataToLi(forecastDays[j], data.daily[j + 1]);
       }
 
-      imagesLoaded(document.body, function (instance) {
+      imagesLoaded(document.body, { background: true }, function (instance) {
         console.log('all images are loaded');
         let preloader = document.querySelector('.preloader');
         preloader.style.display = 'none';
