@@ -1,10 +1,3 @@
-window.onload = () => {
-  setTimeout(() => {
-    let preloader = document.querySelector('.preloader');
-    preloader.style.display = 'none';
-  }, 1000);
-};
-
 /*Получение геолокации юзера */
 
 navigator.geolocation.getCurrentPosition(function (position) {
@@ -120,6 +113,12 @@ function fetchWeather(lat, lon) {
       for (let j = 0; j < forecastDays.length; j++) {
         applyDataToLi(forecastDays[j], data.daily[j + 1]);
       }
+
+      imagesLoaded(document.body, function (instance) {
+        console.log('all images are loaded');
+        let preloader = document.querySelector('.preloader');
+        preloader.style.display = 'none';
+      });
     })
     .catch(function () {
       // catch any errors
