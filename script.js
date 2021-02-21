@@ -127,7 +127,8 @@ function fetchWeather(lat, lon) {
       });
     })
     .catch(function () {
-      // catch any errors
+      document.querySelector('.preloader').style.display = 'none';
+      document.querySelector('.weather-load-error').style.display = 'flex';
     });
 }
 
