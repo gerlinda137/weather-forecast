@@ -90,6 +90,7 @@ ul {
   display: flex;
   flex-direction: column;
   background: linear-gradient(141.31deg, rgba(255, 255, 255, 0.6) 15.72%, rgba(255, 255, 255, 0.258) 100.39%);
+  background: -moz-linear-gradient(147.44deg, rgba(162, 166, 177, 0.8) -65.35%, rgba(176, 184, 195, 0.8) 82.89%);
   backdrop-filter: blur(8px);
   border-radius: 10px;
   padding-top: 18px;
@@ -203,6 +204,7 @@ ul {
   display: flex;
   flex-direction: column;
   background: linear-gradient(141.31deg, rgba(255, 255, 255, 0.6) 15.72%, rgba(255, 255, 255, 0.258) 100.39%);
+  background: -moz-linear-gradient(147.44deg, rgba(162, 166, 177, 0.8) -65.35%, rgba(176, 184, 195, 0.8) 82.89%);
   backdrop-filter: blur(8px);
   border-radius: 10px;
   margin-bottom: 57px;
