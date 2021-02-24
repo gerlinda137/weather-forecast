@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+html {
+  background-image: url('img/default-bg.jpg');
+  background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -14,10 +23,6 @@ body {
   margin: 0 auto;
   padding-right: 15px;
   padding-left: 15px;
-  background-repeat: no-repeat;
-  background-position: unset;
-  background-size: cover;
-  background-image: url('img/default-bg.jpg');
 }
 
 a {
@@ -292,7 +297,6 @@ ul {
   body {
     padding: 0;
     font-size: 18px;
-    background-image: url('img/default-bg-desktop.jpg');
   }
 
   .inner-container {

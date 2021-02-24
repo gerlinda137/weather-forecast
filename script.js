@@ -26,11 +26,76 @@ function getWeekdayName(date) {
   return weekdays[date.getDay()];
 }
 
-const weatherBackgrounds = {
-  Rain: 'img/rain-bg.jpg',
-  Snow: 'img/snowy-bg.png',
-  Clear: 'img/clear-bg.png',
-  Clouds: 'img/cloudy-bg.png',
+const backgroundsDesktopDay = {
+  Rain: 'img/backgrounds/rain.jpg',
+  Drizzle: 'img/backgrounds/rain.jpg',
+  Thunderstorm: 'img/backgrounds/thunder.jpg',
+  Snow: 'img/backgrounds/snow.jpg',
+  Clear: 'img/backgrounds/clear.jpg',
+  Clouds: 'img/backgrounds/clouds.jpg',
+  Mist: 'img/backgrounds/smoke.jpg',
+  Smoke: 'img/backgrounds/smoke.jpg',
+  Haze: 'img/backgrounds/smoke.jpg',
+  Fog: 'img/backgrounds/smoke.jpg',
+  Sand: 'img/backgrounds/sand.jpg',
+  Dust: 'img/backgrounds/sand.jpg',
+  Ash: 'img/backgrounds/ash.jpg',
+  Squall: 'img/backgrounds/squalls.jpg',
+  Tornado: 'img/backgrounds/tornado.jpg',
+};
+
+const backgroundsMobileDay = {
+  Rain: 'img/backgrounds/rain-mob.jpg',
+  Drizzle: 'img/backgrounds/rain-mob.jpg',
+  Thunderstorm: 'img/backgrounds/thunder-mob.jpg',
+  Snow: 'img/backgrounds/snow-mob.jpg',
+  Clear: 'img/backgrounds/clear-mob.jpg',
+  Clouds: 'img/backgrounds/clouds-mob.jpg',
+  Mist: 'img/backgrounds/smoke-mob.jpg',
+  Smoke: 'img/backgrounds/smoke-mob.jpg',
+  Haze: 'img/backgrounds/smoke-mob.jpg',
+  Fog: 'img/backgrounds/smoke-mob.jpg',
+  Sand: 'img/backgrounds/sand-mob.jpg',
+  Dust: 'img/backgrounds/sand-mob.jpg',
+  Ash: 'img/backgrounds/ash-mob.jpg',
+  Squall: 'img/backgrounds/squalls-mob.jpg',
+  Tornado: 'img/backgrounds/tornado-mob.jpg',
+};
+
+const backgroundsDesktopNight = {
+  Rain: 'img/backgrounds/rain-night.jpg',
+  Drizzle: 'img/backgrounds/rain-night.jpg',
+  Thunderstorm: 'img/backgrounds/thunder-night.jpg',
+  Snow: 'img/backgrounds/snow-night.jpg',
+  Clear: 'img/backgrounds/clear-night.jpg',
+  Clouds: 'img/backgrounds/clouds-night.jpg',
+  Mist: 'img/backgrounds/smoke-night.jpg',
+  Smoke: 'img/backgrounds/smoke-night.jpg',
+  Haze: 'img/backgrounds/smoke-night.jpg',
+  Fog: 'img/backgrounds/smoke-night.jpg',
+  Sand: 'img/backgrounds/sand-night.jpg',
+  Dust: 'img/backgrounds/sand-night.jpg',
+  Ash: 'img/backgrounds/ash.jpg',
+  Squall: 'img/backgrounds/squalls.jpg',
+  Tornado: 'img/backgrounds/tornado.jpg',
+};
+
+const backgroundsMobileNight = {
+  Rain: 'img/backgrounds/rain-night-mob.jpg',
+  Drizzle: 'img/backgrounds/rain-night-mob.jpg',
+  Thunderstorm: 'img/backgrounds/thunder-night-mob.jpg',
+  Snow: 'img/backgrounds/snow-night-mob.jpg',
+  Clear: 'img/backgrounds/clear-night-mob.jpg',
+  Clouds: 'img/backgrounds/clouds-night-mob.jpg',
+  Mist: 'img/backgrounds/smoke-night-mob.jpg',
+  Smoke: 'img/backgrounds/smoke-night-mob.jpg',
+  Haze: 'img/backgrounds/smoke-night-mob.jpg',
+  Fog: 'img/backgrounds/smoke-night-mob.jpg',
+  Sand: 'img/backgrounds/sand-night-mob.jpg',
+  Dust: 'img/backgrounds/sand-night-mob.jpg',
+  Ash: 'img/backgrounds/ash-mob.jpg',
+  Squall: 'img/backgrounds/squalls-mob.jpg',
+  Tornado: 'img/backgrounds/tornado-mob.jpg',
 };
 
 let forecastIcons = document.querySelectorAll('.day__img');
@@ -115,6 +180,18 @@ function fetchWeather(lat, lon) {
       //   document.querySelector('.inner-container').style.backgroundImage =
       //     "url('" + weatherBackgrounds[data.weather[0].main] + "')";
       // }
+
+      let currentHour = date.getHours();
+
+      if (currentHour > 6 && currentHour < 20) {
+        document.querySelector('html').style.backgroundImage =
+          "url('" + backgroundsDesktopDay[data.current.weather[0].main] + "')";
+      } else {
+        document.querySelector('html').style.backgroundImage =
+          "url('" +
+          backgroundsDesktopNight[data.current.weather[0].main] +
+          "')";
+      }
 
       for (let j = 0; j < forecastDays.length; j++) {
         applyDataToLi(forecastDays[j], data.daily[j + 1]);
