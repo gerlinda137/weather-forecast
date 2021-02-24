@@ -176,21 +176,31 @@ function fetchWeather(lat, lon) {
         data.current['pressure'] + ' pmh';
       document.querySelector('.wind').textContent =
         data.current['wind_speed'] + ' m/s';
-      // if (data.weather[0].main in weatherBackgrounds) {
-      //   document.querySelector('.inner-container').style.backgroundImage =
-      //     "url('" + weatherBackgrounds[data.weather[0].main] + "')";
-      // }
 
       let currentHour = date.getHours();
 
       if (currentHour > 6 && currentHour < 20) {
-        document.querySelector('html').style.backgroundImage =
-          "url('" + backgroundsDesktopDay[data.current.weather[0].main] + "')";
+        if ((window, innerWidth >= 900)) {
+          document.querySelector('html').style.backgroundImage =
+            "url('" +
+            backgroundsDesktopDay[data.current.weather[0].main] +
+            "')";
+        } else {
+          document.querySelector('html').style.backgroundImage =
+            "url('" + backgroundsMobileDay[data.current.weather[0].main] + "')";
+        }
       } else {
-        document.querySelector('html').style.backgroundImage =
-          "url('" +
-          backgroundsDesktopNight[data.current.weather[0].main] +
-          "')";
+        if ((window, innerWidth >= 900)) {
+          document.querySelector('html').style.backgroundImage =
+            "url('" +
+            backgroundsDesktopNight[data.current.weather[0].main] +
+            "')";
+        } else {
+          document.querySelector('html').style.backgroundImage =
+            "url('" +
+            backgroundsMobileNight[data.current.weather[0].main] +
+            "')";
+        }
       }
 
       for (let j = 0; j < forecastDays.length; j++) {
