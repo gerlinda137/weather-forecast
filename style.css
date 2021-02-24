@@ -82,7 +82,7 @@ ul {
   min-width: 320px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 11px;
+  padding: 0 7px;
 }
 
 .page-main {
@@ -213,7 +213,7 @@ ul {
   backdrop-filter: blur(8px);
   border-radius: 10px;
   margin-bottom: 57px;
-  padding: 34px 9px 32px 9px;
+  padding: 34px 13px 32px 13px;
   position: relative;
 }
 
@@ -221,7 +221,7 @@ ul {
   content: '';
   position: absolute;
   top: 109px;
-  width: 94%;
+  width: 90%;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.6);
 }
