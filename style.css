@@ -88,7 +88,7 @@ ul {
 .page-main {
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
+  padding-top: 36px;
 }
 
 .current {
@@ -98,8 +98,8 @@ ul {
   background: -moz-linear-gradient(147.44deg, rgba(162, 166, 177, 0.8) -65.35%, rgba(176, 184, 195, 0.8) 82.89%);
   backdrop-filter: blur(8px);
   border-radius: 10px;
-  padding-top: 18px;
-  margin-bottom: 33px;
+  padding-top: 36px;
+  margin-bottom: 13px;
 }
 
 .local-data {
@@ -130,7 +130,7 @@ ul {
   justify-content: start;
   padding-left: 19px;
   padding-right: 19px;
-  margin-bottom: 25px;
+  margin-bottom: 33px;
 }
 
 .current__temperature {
@@ -159,7 +159,7 @@ ul {
   background: linear-gradient(141.31deg, rgba(255, 255, 255, 0.6) 15.72%, rgba(255, 255, 255, 0.258) 100.39%);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 28px 20px 15px 20px;
+  padding: 22px 20px 34px 20px;
   border-radius: 0px 0px 10px 10px;
 }
 
@@ -213,14 +213,14 @@ ul {
   backdrop-filter: blur(8px);
   border-radius: 10px;
   margin-bottom: 57px;
-  padding: 13px 9px 14px 9px;
+  padding: 34px 9px 32px 9px;
   position: relative;
 }
 
 .forecast::after {
   content: '';
   position: absolute;
-  top: 89px;
+  top: 109px;
   width: 94%;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.6);
