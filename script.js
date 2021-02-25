@@ -181,22 +181,22 @@ function fetchWeather(lat, lon) {
 
       if (currentHour > 6 && currentHour < 20) {
         if ((window, innerWidth >= 900)) {
-          document.querySelector('html').style.backgroundImage =
+          document.documentElement.style.backgroundImage =
             "url('" +
             backgroundsDesktopDay[data.current.weather[0].main] +
             "')";
         } else {
-          document.querySelector('html').style.backgroundImage =
+          document.documentElement.style.backgroundImage =
             "url('" + backgroundsMobileDay[data.current.weather[0].main] + "')";
         }
       } else {
         if ((window, innerWidth >= 900)) {
-          document.querySelector('html').style.backgroundImage =
+          document.documentElement.style.backgroundImage =
             "url('" +
             backgroundsDesktopNight[data.current.weather[0].main] +
             "')";
         } else {
-          document.querySelector('html').style.backgroundImage =
+          document.documentElement.style.backgroundImage =
             "url('" +
             backgroundsMobileNight[data.current.weather[0].main] +
             "')";
@@ -207,11 +207,15 @@ function fetchWeather(lat, lon) {
         applyDataToLi(forecastDays[j], data.daily[j + 1]);
       }
 
-      imagesLoaded(document.body, { background: true }, function (instance) {
-        console.log('all images are loaded');
-        let preloader = document.querySelector('.preloader');
-        preloader.style.display = 'none';
-      });
+      imagesLoaded(
+        document.documentElement,
+        { background: true },
+        function (instance) {
+          console.log('all images are loaded');
+          let preloader = document.querySelector('.preloader');
+          preloader.style.display = 'none';
+        }
+      );
     })
     .catch(function () {
       document.querySelector('.preloader').style.display = 'none';

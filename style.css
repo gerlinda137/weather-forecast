@@ -287,6 +287,17 @@ ul {
   margin-bottom: 32px;
 }
 
+.preloader__svg {
+  /* transform-origin: 50% 50%; */
+  position: relative;
+}
+
+/* 
+.circles {
+  position: absolute;
+  transform: translate(63px, 69px);
+} */
+
 .preloader__txt {
   margin: 0;
 }
